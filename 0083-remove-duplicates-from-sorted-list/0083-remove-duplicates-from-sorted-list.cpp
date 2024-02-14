@@ -15,7 +15,9 @@ public:
         
         while(curr!=NULL && curr->next!=NULL){
             if(curr->val==curr->next->val){
-                curr->next=curr->next->next;
+                ListNode* temp=curr->next;
+                curr->next=temp->next;
+                delete(temp);
             }
             else{
                 curr=curr->next;
