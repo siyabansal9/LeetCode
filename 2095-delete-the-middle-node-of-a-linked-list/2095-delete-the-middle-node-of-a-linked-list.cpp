@@ -15,25 +15,19 @@ public:
         if(head==NULL || head->next==NULL){
             return NULL;
         }
-        ListNode* temp=head;
-        int n=0;
+        ListNode* prev=NULL;
+        ListNode* slow=head;
+        ListNode* fast=head;
         
-        while(temp!=NULL){
-            n++;
-            temp=temp->next;
+        while(fast!=NULL && fast->next!=NULL){
+            prev=slow;
+            slow=slow->next;
+            fast=fast->next->next;
         }
         
-        int res=n/2;
-        temp=head;
-        while(temp!=NULL){
-            res--;
-            if(res==0){
-                ListNode* mid=temp->next;
-                temp->next=temp->next->next;
-                break;
-            }
-            temp=temp->next;
-        }
+        prev->next=slow->next;
+        delete(slow);
+        
         
         return head;
     }
