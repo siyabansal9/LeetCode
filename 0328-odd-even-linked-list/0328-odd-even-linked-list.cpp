@@ -11,8 +11,8 @@
 class Solution {
 public:
     ListNode* oddEvenList(ListNode* head) {
-        if (!head || !head->next) {
-            return head;  // If the list is empty or has only one node, no need to rearrange.
+        if (head==NULL || head->next==NULL) {
+            return head;
         }
 
         ListNode* odd = head;
@@ -21,9 +21,9 @@ public:
 
         while (even != NULL && even->next != NULL) {
             odd->next = even->next;
-            odd = odd->next;
+            even->next=even->next->next;
 
-            even->next = odd->next;
+            odd = odd->next;
             even = even->next;
         }
 
