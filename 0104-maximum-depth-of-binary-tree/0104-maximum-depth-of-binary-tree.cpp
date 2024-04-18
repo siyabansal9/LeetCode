@@ -19,7 +19,7 @@ public:
         int left=maxDepth(root->left);
         int right=maxDepth(root->right);
         
-        int ans=max(left,right)+1;;
+        int ans=max(left,right)+1;
         
         return ans;
     }
