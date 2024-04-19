@@ -18,8 +18,7 @@ public:
         if(p==NULL && q!=NULL){
             return false;
         }
-        
-        if(p!=NULL && q==NULL){
+        if(p!=NULL && q==NULL ){
             return false;
         }
         
