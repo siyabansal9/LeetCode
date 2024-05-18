@@ -1,25 +1,36 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
 class Solution {
 public:
-    // Helper function to calculate the number of moves
-    int solve(TreeNode* root, int &moves) {
-        if (root == nullptr) {
+    
+    int solve(TreeNode* root,int &m){
+        if(root==NULL){
             return 0;
         }
         
-        // Recursively calculate the number of coins to be moved for left and right subtrees
-        int left = solve(root->left, moves);
-        int right = solve(root->right, moves);
+        int left=solve(root->left,m);
+        int right=solve(root->right,m);
         
-        // Total moves is incremented by the absolute value of coins to be moved from left and right subtrees
-        moves += abs(left) + abs(right);
+        m+= abs(left)+abs(right);
         
-        // Return the net excess coins in the subtree rooted at the current node
-        return root->val + left + right - 1;
+        return (left+right+root->val)-1;
     }
     
     int distributeCoins(TreeNode* root) {
-        int moves = 0;
-        solve(root, moves);
+        
+        int moves=0;
+        
+        solve(root,moves);
+        
         return moves;
     }
 };
