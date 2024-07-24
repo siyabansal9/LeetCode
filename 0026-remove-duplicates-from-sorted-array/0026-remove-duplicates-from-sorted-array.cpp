@@ -9,7 +9,6 @@ public:
         }
         
         int i = 0;
-        int size = uset.size();
         
         for(auto x : uset){
             nums[i] = x;
