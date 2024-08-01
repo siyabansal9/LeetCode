@@ -20,7 +20,7 @@ class Solution {
         int ans[] = new int[hp2.size()];
         int idx = 0;
 
-        for(var a : hp2){
+        for(int a : hp2){
             ans[idx] = a;
             idx++;
         }
