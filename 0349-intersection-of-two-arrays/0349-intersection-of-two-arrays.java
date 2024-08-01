@@ -12,14 +12,17 @@ class Solution {
         HashSet<Integer> hp2 = new HashSet<>();
 
         for(int i=0; i<n2; i++){
-            if(hp1.contains(arr2[i])) hp2.add(arr2[i]);
+            if(hp1.contains(arr2[i])){
+                hp2.add(arr2[i]);
+            } 
         }
 
         int ans[] = new int[hp2.size()];
         int idx = 0;
 
         for(var a : hp2){
-            ans[idx++] = a;
+            ans[idx] = a;
+            idx++;
         }
         return ans;
     }
