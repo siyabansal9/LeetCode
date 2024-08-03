@@ -11,12 +11,10 @@ class Solution {
             int count = entry.getValue();
 
             if (k == 0) {
-                // If k is 0, count how many elements appear more than once
                 if (count > 1) {
                     ans++;
                 }
             } else {
-                // If k is positive, check if num + k exists in the map
                 if (map.containsKey(num + k)) {
                     ans++;
                 }
