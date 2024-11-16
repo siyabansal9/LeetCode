@@ -3,8 +3,8 @@ public:
     vector<int> productExceptSelf(vector<int>& nums) {
         int n = nums.size();
         
-        std::vector<int> prefix(n, 1);
-        std::vector<int> suffix(n, 1);
+        vector<int> prefix(n, 1);
+        vector<int> suffix(n, 1);
         
         for (int i = 1; i < n; ++i) {
             prefix[i] = prefix[i - 1] * nums[i - 1];
@@ -14,7 +14,7 @@ public:
             suffix[i] = suffix[i + 1] * nums[i + 1];
         }
         
-        std::vector<int> answer(n);
+        vector<int> answer(n);
         for (int i = 0; i < n; ++i) {
             answer[i] = prefix[i] * suffix[i];
         }
