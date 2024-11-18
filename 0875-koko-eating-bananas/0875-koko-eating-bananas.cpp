@@ -7,7 +7,7 @@ public:
            int tmp = 0;
            for(int i = 0; i < piles.size(); i ++){
                tmp += (piles[i]/m + (piles[i]%m != 0));
-               if(tmp > h) break; // prevent overflow
+               if(tmp > h) break;
            }
            if(tmp <= h) r = m;
            else l = m;
